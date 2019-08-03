@@ -1,6 +1,20 @@
 docker build .
 
+# Build the project, it will recheck the requirements.txt
+docker-compose build
+
 # Create django project using docker configuration
 docker-compose run app sh -c "django-admin.py startproject app ."
 
+# Create django app within project using docker configuration
+docker-compose run app sh -c "python manage.py startapp core"
+
+# Build the project, it will recheck the requirements.txt
 docker-compose build
+
+# Run tests
+docker-compose run app sh -c "python manage.py test"
+docker-compose run app sh -c "python manage.py test & flake8"
+
+# Other django commands
+docker-compose run app sh -c "python manage.py makemigrations core"
