@@ -1,2 +1,6 @@
 docker build .
+
+# Create django project using docker configuration
+docker-compose run app sh -c "django-admin.py startproject app ."
+
 docker-compose build
