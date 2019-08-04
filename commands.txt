@@ -18,3 +18,5 @@ docker-compose run app sh -c "python manage.py test & flake8"
 
 # Other django commands
 docker-compose run app sh -c "python manage.py makemigrations core"
+
+docker-compose up
