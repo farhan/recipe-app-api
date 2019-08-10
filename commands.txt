@@ -23,6 +23,6 @@ docker-compose up
 
 # Create a new app
 docker-compose run app sh -c "python manage.py startapp user"
-
+docker-compose run --rm app sh -c "python manage.py startapp recipe"
 
 docker-compose run --rm app sh -c "python manage.py test && flake8"
