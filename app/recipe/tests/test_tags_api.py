@@ -94,7 +94,8 @@ class PrivateTagsApiTests(TestCase):
         recipe.tags.add(tag1)
 
         # assigned_only = 1 means assigned_only =  true
-        # assigned_only = 1 means only those tags which are assigned through foreign key
+        # assigned_only = 1 means only those tags which are assigned through
+        # foreign key
         res = self.client.get(TAGS_URL, {'assigned_only': 1})
 
         serializer1 = TagSerializer(tag1)

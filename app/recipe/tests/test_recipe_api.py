@@ -202,7 +202,8 @@ class PrivateRecipeApiTests(TestCase):
         self.assertEqual(recipe.time_minutes, payload['time_minutes'])
         self.assertEqual(recipe.price, payload['price'])
         tags = recipe.tags.all()
-        # As per PUT method recipe shouldn't have any tag because it doesn't exist in payload
+        # As per PUT method recipe shouldn't have any tag because it doesn't
+        # exist in payload
         self.assertEqual(len(tags), 0)
 
 
